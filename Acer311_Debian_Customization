@@ -1,49 +1,51 @@
-### Snippets to customize an Acer 311 Chromebook for GIS consulting and web development capabilties.
-### After initializing your linux virtual machine you can follow the workflow to achieve your needs.
+#! Snippets to customize an Acer 311 Chromebook for GIS consulting and web development capabilties.
+#! After initializing your linux virtual machine you can follow the workflow to achieve your needs.
 
-### TITLE: ACER 311 DEBIAN 11 BULLSEYE GIS CONSULTATION WEB DEV Workstation Customization
-### AUTHOUR: REX
-### DATE: September 2022
-### PRE-REQS: ACER 311 CHROMEBOOK with LINUX DEBIAN 11 BULLSEYE Virtual Terminal deployed.
-### NOTES: 
-### 1. FLASHED MEMORY CANNOT BE OVERWRITTEN AND DOES NOT SUPPORT LIVE BOOT USB TO USE FOSS4G OSGEO TOOL.
-### 2. AMD64
-### 3. Not everything works, and some things work without providing you with an icon resulting in terminal to launch, which isn't too bad if you make it to the end of this.
-### 4. -y after install denotes automatically accepting changes and memory usage. Remove from code if you prefer to verify everything or begin to notice depreciation in package availability.
+#! TITLE: ACER 311 DEBIAN 11 BULLSEYE GIS CONSULTATION WEB DEV Workstation Customization
+#! AUTHOUR: REX
+#! DATE: September 2022
+#! PRE-REQS: ACER 311 CHROMEBOOK with LINUX DEBIAN 11 BULLSEYE Virtual Terminal deployed.
+#! NOTES: 
+#! 1. FLASHED MEMORY CANNOT BE OVERWRITTEN AND DOES NOT SUPPORT LIVE BOOT USB TO USE FOSS4G OSGEO TOOL.
+#! 2. AMD64
+#! 3. Not everything works, and some things work without providing you with an icon resulting in terminal to launch, which isn't too bad if you make it to the end of this.
+#! 4. -y after install denotes automatically accepting changes and memory usage. Remove from code if you prefer to verify everything or begin to notice depreciation in package availability.
 
-### SOURCES: Alot of my base knowledge comes from years of programming various Ubuntu versions, and really, I just changed may package calls from apt-get to apt and have had good success. However there are something that needed research and I would like to acknowledge the following sources for their direct (copy/paste) or indirect (modified) snippets.
-
---------------------------------
-### First update and upgrade.
+#! SOURCES: Alot of my base knowledge comes from years of programming various Ubuntu versions, and really, I just changed may package calls from apt-get to apt and have had good success. However there are something that needed research and I would like to acknowledge the following sources for their direct (copy/paste) or indirect (modified) snippets.
+#! https://www.how2shout.com/linux/2-ways-to-install-pycharm-python-ide-on-debian-11-bullseye-linux/
+#!--------------------------------
+#! First update and upgrade.
 sudo apt update && sudo apt upgrade -y
 
-### Install a lot of things in bulk with this code. As time continues on, there may be depreciated packages within this list and it would be prudent to review all outputs during execution. Get a coffee, it will take a while.
-### Install:
-# Discovery center for available apps through gui; 
-# app utilities for extended util commands; 
-# python and additional python related packages;
-# git for additionally repositories
-# nano text editor for in terminal file update and review
-# thunar for file management 
-# gimp for raster management and etc
-# gis software 
-# node.js node packet manager node d3
-# leaflet image 
-# some really cool additional packages for perl and r and pushing boundaries
+#! Install a lot of things in bulk with this code. As time continues on, there may be depreciated packages within this list and it would be prudent to review all outputs during execution. Get a coffee, it will take a while.
+#! Install:
+#! Discovery center for available apps through gui; 
+#! app utilities for extended util commands; 
+#! python and additional python related packages;
+#! git for additionally repositories
+#! nano text editor for in terminal file update and review
+#! thunar for file management 
+#! gimp for raster management and etc
+#! gis software 
+#! node.js node packet manager node d3
+#! leaflet image 
+#! some really cool additional packages for perl and r and pushing boundaries
 
 sudo apt install -y plasma-discover apt-utils python python3-pip python3-bs4 python3-cryptography git nano thunar gimp qgis qgis-plugin-grass saga nodejs npm node-d3-queue node-leaflet-image ruby-rails ruby-leaflet-rails node-leaflet libjs-leaflet.markercluster libjs-leaflet node-leaflet-hash libjs-leaflet-image libjs-leaflet-geometryutil node-leaflet.markercluster node-leaflet-formbuilder libqt5location5-plugin-mapboxgl libmapbox-variant-dev libgeo-google-mapobject-perl libmapcache1-dev libmapnik3.1 libmapnik-dev libmapscript-java libmapscript-perl libmapserver2 libmapserver-dev libmapsforge-java libmapsforge-java-doc mapcache-tools mapcache-cgi mapcode mapnik-reference mapnik-utils mapproxy mapproxy-doc mapserver-bin mapserver-doc maptool marble-maps mkgmap mkgmapgui mkgmap-splitter octave-mapping octomap-tools python3-mapnik python3-mapproxy python3-mappy python3-mapscript python3-mpltoolkits.basemap python3-mpltoolkits.basemap-dbg python3-osmapi python3-pymap3d python-mpltoolkits.basemap-data python-mpltoolkits.basemap-doc qmapshack r-base-core r-api-4.0 r-bioc-complexheatmap r-cran-gmaps r-cran-heatmaply r-cran-mapdata r-cran-mapproj r-cran-maps r-cran-maptools r-cran-pheatmap debian-keyring libgdal-grass grass-dev grass-gui gnuplot gpsbabel gpstrans netpbm python3-rpy2 python3-termcolor grass-dev-doc gvfs-backends libgd-tools geotiff-bin buku
 
-## Add buku bookmarks
+#! Add buku bookmarks
 buku -a https://github.com/James-Burton/solutions/edit/main/Acer311_Debian_Customization
 buku -a https://linux-packages.com/debian/all-packages
 buku -a https://www.jetbrains.com/pycharm/download/#section=windows
-## export bookmarks to html to upload into firefox
+#! export bookmarks to html to upload into firefox
 buku -e bukumarks.html
 
-## install docker
+#! install docker
 sudo pip install docker-compose -y
 curl -fsSL https://get.docker.com -o get-docker.sh
 
-## Install a web browser with icon .. Funny story this package is built off a package that is specific to amd64 arch while we need ard64.. Palemoon works well but requires an echo and curl to stevenpusser repo
+#! Install a web browser with icon .. Funny story this package is built off a package that is specific to amd64 arch while we need ard64.. Palemoon works well but requires an echo and curl to stevenpusser repo
 
 sudo apt install firefox-esr-l10n-en-ca -y
+
+#! install pycharm from source above. note it will be all angry with warnings about no visual studio code and eclipse but snapd installs do not work as no squashfs package for ard64
