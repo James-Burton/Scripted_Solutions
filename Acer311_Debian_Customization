@@ -36,6 +36,7 @@ sudo apt install -y plasma-discover apt-utils python python3-pip python3-bs4 pyt
 ## Add buku bookmarks
 buku -a https://github.com/James-Burton/solutions/edit/main/Acer311_Debian_Customization
 buku -a https://linux-packages.com/debian/all-packages
+buku -a https://www.jetbrains.com/pycharm/download/#section=windows
 ## export bookmarks to html to upload into firefox
 buku -e bukumarks.html
 
