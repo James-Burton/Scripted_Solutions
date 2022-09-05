@@ -1,0 +1,23 @@
+### Snippets to customize an Acer 311 Chromebook for GIS consulting and web development capabilties.
+### After initializing your linux virtual machine you can follow the workflow to achieve your needs.
+
+### TITLE: ACER 311 DEBIAN 11 BULLSEYE GIS CONSULTATION WEB DEV Workstation Customization
+### AUTHOUR: REX
+### DATE: September 2022
+### PRE-REQS: ACER 311 CHROMEBOOK with LINUX DEBIAN 11 BULLSEYE Virtual Terminal deployed.
+### NOTES: 
+### 1. FLASHED MEMORY CANNOT BE OVERWRITTEN AND DOES NOT SUPPORT LIVE BOOT USB TO USE FOSS4G OSGEO TOOL.
+### 2. AMD64
+### 3. Not everything works, and some things work without providing you with an icon resulting in terminal to launch, which isn't too bad if you make it to the end of this.
+### 4. -y after install denotes automatically accepting changes and memory usage. Remove from code if you prefer to verify everything or begin to notice depreciation in package availability.
+
+--------------------------------
+### First update and upgrade.
+sudo apt update && sudo apt upgrade
+
+### Install Discovery center for available apps through gui
+sudo apt install -y plasma-discover
+
+### Install additional app utilities commands
+### sudo apt install apt-utils
+
