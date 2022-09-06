@@ -17,21 +17,35 @@
 #! First update and upgrade.
 sudo apt update && sudo apt upgrade -y
 
-#! Install a lot of things in bulk with this code. As time continues on, there may be depreciated packages within this list and it would be prudent to review all outputs during execution. Get a coffee, it will take a while.
-#! Install:
-#! Discovery center for available apps through gui; 
-#! app utilities for extended util commands; 
-#! python and additional python related packages;
-#! git for additionally repositories
-#! nano text editor for in terminal file update and review
-#! thunar for file management 
-#! gimp for raster management and etc
-#! gis software 
-#! node.js node packet manager node d3
-#! leaflet image 
-#! some really cool additional packages for perl and r and pushing boundaries
 
-sudo apt install -y plasma-discover apt-utils python python3-pip python3-bs4 python3-cryptography git nano thunar gimp qgis qgis-plugin-grass saga nodejs npm node-d3-queue node-leaflet-image ruby-rails ruby-leaflet-rails node-leaflet libjs-leaflet.markercluster libjs-leaflet node-leaflet-hash libjs-leaflet-image libjs-leaflet-geometryutil node-leaflet.markercluster node-leaflet-formbuilder libqt5location5-plugin-mapboxgl libmapbox-variant-dev libgeo-google-mapobject-perl libmapcache1-dev libmapnik3.1 libmapnik-dev libmapscript-java libmapscript-perl libmapserver2 libmapserver-dev libmapsforge-java libmapsforge-java-doc mapcache-tools mapcache-cgi mapcode mapnik-reference mapnik-utils mapproxy mapproxy-doc mapserver-bin mapserver-doc maptool marble-maps mkgmap mkgmapgui mkgmap-splitter octave-mapping octomap-tools python3-mapnik python3-mapproxy python3-mappy python3-mapscript python3-mpltoolkits.basemap python3-mpltoolkits.basemap-dbg python3-osmapi python3-pymap3d python-mpltoolkits.basemap-data python-mpltoolkits.basemap-doc qmapshack r-base-core r-api-4.0 r-bioc-complexheatmap r-cran-gmaps r-cran-heatmaply r-cran-mapdata r-cran-mapproj r-cran-maps r-cran-maptools r-cran-pheatmap debian-keyring libgdal-grass grass-dev grass-gui gnuplot gpsbabel gpstrans netpbm python3-rpy2 python3-termcolor grass-dev-doc gvfs-backends libgd-tools geotiff-bin buku
+#! install some dependencies 
+sudo apt install -y python python3-pip python3-bs4 python3-cryptography debian-keyring
+
+sudo apt install -y plasma-discover apt-utils git nano thunar gimp buku
+
+#! GIS 
+sudo apt isntall -y qgis qgis-plugin-grass saga-common grass-gui libgdal-grass grass-dev libgd-tools qmapshack marble-maps maptool
+
+#! programming ides
+sudo apt install -y emacs ess #!follow pycharm instructions above
+
+#! docs if needed 
+sudo apt install grass-dev-doc python-mpltoolkits.basemap-doc libmapsforge-java-doc mapproxy-doc mapnik-reference
+
+#! install javascript leaflet mapbox things
+sudo apt install -y nodejs npm node-d3-queue node-leaflet-image node-leaflet libjs-leaflet.markercluster libjs-leaflet node-leaflet-hash libjs-leaflet-image libjs-leaflet-geometryutil node-leaflet.markercluster node-leaflet-formbuilder libqt5location5-plugin-mapboxgl libmapbox-variant-dev 
+
+#! install r geospatial things
+sudo apt install -y r-base-core r-api-4.0 r-bioc-complexheatmap r-cran-gmaps r-cran-heatmaply r-cran-mapdata r-cran-mapproj r-cran-maps r-cran-maptools r-cran-pheatmap 
+
+#! install ruby geospatial things
+sudo apt install -y ruby-rails ruby-leaflet-rails 
+
+#! install perl geospatial things
+sudo apt instal -y libgeo-google-mapobject-perl libmapscript-perl
+
+#! misc geospatial packages 
+sudo apt install -y libmapcache1-dev libmapnik3.1 libmapnik-dev libmapscript-java  libmapserver2 libmapserver-dev libmapsforge-java mapcache-tools mapcache-cgi mapcode  mapnik-utils mapproxy  mapserver-bin mapserver-doc   mkgmap mkgmapgui mkgmap-splitter octave-mapping octomap-tools python3-mapnik python3-mapproxy python3-mappy python3-mapscript python3-mpltoolkits.basemap python3-mpltoolkits.basemap-dbg python3-osmapi python3-pymap3d python-mpltoolkits.basemap-data     gnuplot gpsbabel gpstrans netpbm python3-rpy2 python3-termcolor  gvfs-backends  geotiff-bin 
 
 #! Add buku bookmarks
 buku -a https://github.com/James-Burton/solutions/edit/main/Acer311_Debian_Customization
