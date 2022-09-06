@@ -1,0 +1,30 @@
+## Quick compilation of methods to retrieve data sources for features in current GIS Session. Tests on ArcMap 10.6, QGIS3.10, ArcPro 2.2
+## 
+## Title: List Data Source
+##
+## Authour: James Burton (REX)
+##
+## Date: Sept 2022
+##
+## PRE-REQS: ArcMap/ ArcPy; ArcPro/ ArcPy; QGIS 3.10
+##
+## Notes: May or may not have copied and/or altered from found sources online. May need tweaking of QGIS one. Should add openpyxl to export list to spreadsheet from quick upload options.
+
+
+## list layers in current mxd:
+import arcpy
+mxd = arcpy.mapping.MapDocument("CURRENT")
+for lyr in arcpy.mapping.ListLayers(mxd):
+    if lyr.supports("DATASOURCE"):
+        print "Layer: " + lyr.name + "  Source: " + lyr.dataSource
+        
+## list layers in current project map
+p = arcpy.mp.ArcGISProject("CURRENT")
+m = p.listMaps()[0]
+for lyr in m.listLayers():
+    if lyr.supports("DATASOURCE"):
+       print("Layer: " + lyr.name + "  Source: " + lyr.dataSource)
+       
+## for qgis 3, opens a new window with data source
+layer = iface.activeLayer()
+QMessageBox.information(None, "parDir: ", layer.source())
