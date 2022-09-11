@@ -63,3 +63,46 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 sudo apt install firefox-esr-l10n-en-ca -y
 
 #! install pycharm from source above. note it will be all angry with warnings about no visual studio code and eclipse but snapd installs do not work as no squashfs package for ard64
+
+
+#! install REACT
+sudo apt install build-essential
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt install nodejs
+sudo npm install -g create-react-app
+#! create react app
+create-react-app reactapp
+#! didn't work, npm error behind proxy says aborted additional npm install, reckon not pushing as sudo
+#! FULL MESSAGE
+rex@penguin:~$ create-react-app reactapp
+
+Creating a new React app in /home/rex/reactapp.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+npm ERR! code ECONNRESET
+npm ERR! syscall read
+npm ERR! errno ECONNRESET
+npm ERR! network request to https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz failed, reason: read ECONNRESET
+npm ERR! network This is a problem related to network connectivity.
+npm ERR! network In most cases you are behind a proxy or have bad network settings.
+npm ERR! network 
+npm ERR! network If you are behind a proxy, please make sure that the
+npm ERR! network 'proxy' config is set properly.  See: 'npm help config'
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/rex/.npm/_logs/2022-09-11T20_26_21_151Z-debug-0.log
+
+Aborting installation.
+  npm install --no-audit --save --save-exact --loglevel error react react-dom react-scripts cra-template has failed.
+
+Deleting generated file... package.json
+Deleting reactapp/ from /home/rex
+Done.
+#! end of full message
+#!installing the packages it got stuck on seperately to starting react
+sudo npm install --no-audit --save --save-exact --loglevel error react react-dom react-scripts cra-template
+sudo create-react-app myfirstapp
+cd myfirstapp
+sudo npm start #! seems to need a push from sudo
