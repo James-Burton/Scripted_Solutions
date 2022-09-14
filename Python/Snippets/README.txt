@@ -1,0 +1,1 @@
+A collection of script snippets to serve various simple processes on a multitude of platforms, all Python based.
