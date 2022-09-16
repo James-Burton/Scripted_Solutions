@@ -1,0 +1,59 @@
+function telephoneCheck(str) {
+  let badChar = ["!","#","@","$","%","^","&","*",";",":",'"',"'","<",">",",",".","/","?","{","}","[","]","+","="];
+  console.log(str);
+  let myValues=str.toLowerCase();
+  for (let i in badChar){
+    for (let ii in myValues){
+      if (myValues[ii]==badChar[i]){
+        return false;
+      }
+    }
+  };
+
+  const a = '(', b = ')';
+const distanceBetween = (str, a, b) => {
+   const aIndex = str.indexOf(a);
+   const bIndex = str.indexOf(b);
+   if(aIndex === -1 || b === -1){
+      return false;
+   };
+   return Math.abs(aIndex - bIndex);
+  };
+  if (distanceBetween(str, a, b)>4){
+    return false;
+  };
+
+  var noNum = str.replaceAll(/[0-9]/g, '');
+  if (!noNum.includes("(")&& noNum.includes(")")|| !noNum.includes(")")&& noNum.includes("(")){
+  return false;
+}else if (noNum.includes("---")){
+  return false;
+}else if (str[0]=="-"){
+  return false;
+}else {
+  myValues=str.replaceAll('(','').replaceAll('-','').replaceAll(")",'').replaceAll(" ",'');
+  myValues=myValues.split('');
+  let numCheck='';
+  for (let i in myValues){
+    numCheck += parseInt(myValues[i]);
+  }
+  console.log(numCheck);
+  console.log('numcheck above, str below');
+  console.log(str);
+  console.log('----------');
+  if (numCheck.length-1==10){
+    if (numCheck[0]==1){
+      return true;
+    } else {
+      return false;
+    };
+  }
+  if (numCheck.length-1==9){
+      return true;
+  }else {
+      return false;
+    }
+}
+}
+
+telephoneCheck("(555)555-5555");

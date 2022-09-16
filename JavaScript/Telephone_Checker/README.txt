@@ -1,0 +1,1 @@
+my answer to javascript certificate question telephone checker.
