@@ -29,6 +29,9 @@ sudo apt isntall -y qgis qgis-plugin-grass saga-common grass-gui libgdal-grass g
 #! programming ides
 sudo apt install -y emacs ess #!follow pycharm instructions above
 
+#! Django
+pip install Django==4.1.2
+
 #! docs if needed 
 sudo apt install grass-dev-doc python-mpltoolkits.basemap-doc libmapsforge-java-doc mapproxy-doc mapnik-reference
 
